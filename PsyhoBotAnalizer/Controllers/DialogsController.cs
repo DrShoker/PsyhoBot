@@ -20,7 +20,7 @@ namespace PsyhoBotAnalizer.Controllers
 
         private static int counter = 0;
         
-        public Question GetNextQuestion(int id)
+        Question GetNextQuestion(int id)
         {
             bool identify = false;
 
@@ -62,6 +62,11 @@ namespace PsyhoBotAnalizer.Controllers
         public IHttpActionResult GetDialog(int id)
         {
             Dialog dialog = db.Dialogs.Find(id);
+            db.Entry(dialog).Collection("Questions").Load();
+            foreach(Question q in dialog.Questions)
+            {
+                db.Entry(q).Collection("Answers").Load();
+            }
             if (dialog == null)
             {
                 return NotFound();

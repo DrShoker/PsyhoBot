@@ -118,7 +118,6 @@ C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\bin\r
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csprojResolveAssemblyReference.cache
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csproj.CoreCompileInputs.cache
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.dll
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.pdb

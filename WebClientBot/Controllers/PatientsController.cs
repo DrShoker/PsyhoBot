@@ -90,7 +90,7 @@ namespace WebClientBot.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
-        public ActionResult Delete(Patient p)
+        public ActionResult Delete(int id)
         
         {
             HttpClient client = new HttpClient();
@@ -101,7 +101,7 @@ namespace WebClientBot.Controllers
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            string adress = "/api/Patients/" + p.Id;
+            string adress = "/api/Patients/" + id;
 
             HttpResponseMessage response = client.DeleteAsync(adress).Result;
 
@@ -153,6 +153,23 @@ namespace WebClientBot.Controllers
             return RedirectToAction("Index");
 
         }
+
+        //public ActionResult FindIdforName(string name)
+        //{
+        //    HttpClient client = new HttpClient();
+
+        //    client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+        //    client.DefaultRequestHeaders.Clear();
+
+        //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        //    string adress = "api/Patients/GetPatientName/" + name;
+
+        //    HttpResponseMessage response = client.GetAsync(adress).Result;
+
+
+        //}
 
         //public ViewResult ViewDelete()
         //{

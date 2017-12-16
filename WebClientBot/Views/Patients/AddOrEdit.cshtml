@@ -50,12 +50,17 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.DoctorId)
+            @Html.EditorFor(model => model.DoctorId)
+            @Html.ValidationMessageFor(model => model.DoctorId)
+        </div>
+
+        <div class="form-group">
             <input type="submit" value="Submit" class="btn button" />
             <input type="reset" value="Reset" class="btn button" />
-        </div>
+        </div>        
     }
 </div>
-
 
 @section scripts{
     @Scripts.Render("~/bundles/jqueryval");

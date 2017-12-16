@@ -102,6 +102,16 @@ namespace PsyhoBotAnalizer.Controllers
             return Ok(patient);
         }
 
+        private int GetPatientIdforName(string Name)
+        {
+       
+            Patient pat = db.Patients.Where(p => p.FullName == Name).FirstOrDefault();
+            
+            
+            
+            return (pat.Id);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

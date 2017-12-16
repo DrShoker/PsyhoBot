@@ -20,7 +20,7 @@ namespace PsyhoBotAnalizer.Controllers
 
         private static int counter = 0;
         
-        public Question GetNextQuestion(int id)
+        Question GetNextQuestion(int id)
         {
             bool identify = false;
 
@@ -37,27 +37,46 @@ namespace PsyhoBotAnalizer.Controllers
             }
             return null;
         }
-
-        public IHttpActionResult StartDialog(Dialog dialog)
+        [HttpGet]
+        [ResponseType(typeof(Dialog))]
+        public IHttpActionResult GetStartDialog(string Name, int id)
         {
-            PostDialog(dialog);
+            Patient pat = db.Patients.Where(p => p.FullName == Name).FirstOrDefault();
 
-            risingdialog = dialog;
+            if (pat != null)
+            {
 
-            dialog.Questions.FirstOrDefault();
+                Dialog dialog = new Dialog();
 
-            return Ok(dialog);
+                PostDialog(dialog);
+
+                risingdialog = dialog;
+            
+                dialog.PatientId = pat.Id;
+
+                dialog.Questions.FirstOrDefault();
+
+                return Ok(dialog);
+            }
+
+            else
+            {
+                return NotFound();
+            }
+
         }
 
         private MainDBContext db = new MainDBContext();
 
         // GET: api/Dialogs
+        [HttpGet]
         public IQueryable<Dialog> GetDialogs()
         {
             return db.Dialogs;
         }
 
         // GET: api/Dialogs/5
+        [HttpGet]
         [ResponseType(typeof(Dialog))]
         public IHttpActionResult GetDialog(int id)
         {
@@ -71,6 +90,7 @@ namespace PsyhoBotAnalizer.Controllers
         }
 
         // PUT: api/Dialogs/5
+        [HttpPost]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutDialog(int id, Dialog dialog)
         {
@@ -106,9 +126,11 @@ namespace PsyhoBotAnalizer.Controllers
         }
 
         // POST: api/Dialogs
+        [HttpPost]
         [ResponseType(typeof(Dialog))]
         public IHttpActionResult PostDialog(Dialog dialog)
         {
+            dialog.Date = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -126,6 +148,7 @@ namespace PsyhoBotAnalizer.Controllers
         }
 
         // DELETE: api/Dialogs/5
+        [HttpDelete]
         [ResponseType(typeof(Dialog))]
         public IHttpActionResult DeleteDialog(int id)
         {

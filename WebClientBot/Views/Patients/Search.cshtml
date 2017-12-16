@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    @using(Html.BeginForm("Search", "Patients"))
+    {
+        <span>ID</span> <input type="text" name="id"/> <input type="submit" value="Search" />
+        if (ViewBag.result != null)
+        {
+        <br/>
+        <span>ID: @ViewBag.result.Id</span>
+        <br />
+        <span>FullName: @ViewBag.result.FullName</span>
+        <br />
+        <span>Birthday: @ViewBag.result.Birthday</span>
+        <br />
+        <span>Diagnosis: @ViewBag.result.Diagnosis</span>
+        <br />
+        <span>Sex: @ViewBag.result.Sex</span>
+        <br />
+        <span>DiseasePeriod: @ViewBag.result.DiseasePeriod</span>
+        <br />
+        <span>NormalCondition: @ViewBag.result.NormalCondition</span>
+        <br />
+        <span>Characteristic: @ViewBag.result.Characteristic</span>
+        }
+    }
+</body>
+</html>

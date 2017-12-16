@@ -1,0 +1,52 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="with=device-with" />
+    <title>Index</title>
+</head>
+<body>
+   
+    @Html.ActionLink("Search Patient", "Search", "Patients")
+    <br />
+<table cellpadding="2" cellspacing="2" border="2">
+    <tr>
+        <th>ID</th>
+        <th>FullName</th>
+        <th>Birthday</th>
+        <th>Diagnosis</th>
+        <th>Sex</th>
+        <th>DiseasePeriod</th>
+        <th>NormalCondition</th>
+        <th>Characteristic</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var p in ViewBag.result)
+    {
+        <tr>
+            <th>@p.Id</th>
+            <th>@p.FullName</th>
+            <th>@p.Birthday</th>
+            <th>@p.Diagnosis</th>
+            <th>@p.Sex</th>
+            <th>@p.DiseasePeriod</th>
+            <th>@p.NormalCondition</th>
+            <th>@p.Characteristic</th>
+            <th>@using (@Html.BeginForm("Delete", "Patients", FormMethod.Post))
+            {
+                <input type="submit" name = "id" value= class="btn btn-default" />  
+             }
+            @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
+            {
+                <input type="submit" name="id" value=@p.Id class="btn btn-default" />
+            }
+            </th>
+        </tr>
+    }
+</table>
+    </body>
+</html>

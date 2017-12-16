@@ -1,0 +1,64 @@
+﻿@model WebClientBot.Models.Patient
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<div class="form-body">
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FullName)
+        @Html.EditorFor(model => model.FullName)
+        @Html.ValidationMessageFor(model => model.FullName)
+    </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Birthday)
+            @Html.EditorFor(model => model.Birthday)
+            @Html.ValidationMessageFor(model => model.Birthday)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Diagnosis)
+            @Html.EditorFor(model => model.Diagnosis)
+            @Html.ValidationMessageFor(model => model.Diagnosis)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sex)
+            @Html.EditorFor(model => model.Sex)
+            @Html.ValidationMessageFor(model => model.Sex)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiseasePeriod)
+            @Html.EditorFor(model => model.DiseasePeriod)
+            @Html.ValidationMessageFor(model => model.DiseasePeriod)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NormalCondition)
+            @Html.EditorFor(model => model.NormalCondition)
+            @Html.ValidationMessageFor(model => model.NormalCondition)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Characteristic)
+            @Html.EditorFor(model => model.Characteristic)
+            @Html.ValidationMessageFor(model => model.Characteristic)
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn button" />
+            <input type="reset" value="Reset" class="btn button" />
+        </div>
+}
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+}

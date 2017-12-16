@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta name="viewport" content="with=device-with" />
-    <title>Index</title>
+    <title>IndexXXXXX</title>
 </head>
 <body>
    
@@ -38,7 +38,7 @@
             <th>@p.Characteristic</th>
             <th>@using (@Html.BeginForm("Delete", "Patients", FormMethod.Post))
             {
-                <input type="submit" name = "id" value= class="btn btn-default" />  
+                <input type="submit" name = "id" value=@p.Id class="btn btn-default" />  
              }
             @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
             {

@@ -2,26 +2,55 @@
 @model List<Question>
 @{
     ViewBag.Title = "Index";
+    Dictionary<Question, string> answers = ViewBag.Answers;
 }
 @if(ViewBag.Error!=null)
 {
     <p>error</p>
 }
+@{ string url = Request.Url.ToString(); }
+<h2>Index</h2>
+<div class="col-md-4">
+
+</div>
+<div class="col-md-4">
+    <div class="container" style="height:400px;">
+        @foreach (Question q in Model)
+        {
+            string answer = "";
+            if (answers!=null && answers.Keys.Contains(q))
+            {
+                answer = answers[q];
+            }
+            <p class="alert-info text-right">@q.Body</p>
+            <p class="alert-success text-left">@answer</p>
+        }
+
+    </div>
+</div>
+<div class="col-md-4">
+
+</div>
+<div class="navbar-fixed-bottom col-md-4 container" style="margin-bottom: 100px;">
+    <hr />
+    <div class="container">
+        @foreach (Answer a in Model.Last().Answers)
+        {
+            string id = "btn" + a.Id;
+            <a class="btn btn-default" onclick="FromTo('@id')" id="@id">@a.Body</a>
+        }
+    </div>
+    <form method="post">
+        <div class="input-group">
+            <input type="text" id="MainTB" class="form-control" name="answer" placeholder="Type your answer" aria-describedby="addon1" />
+            <input type="submit" class="form-control" />
+        </div>
+    </form>
+</div>
 <script>
-    function url() {
-        return document.URL;
+    function FromTo(btnid)
+    {
+        var text = document.getElementById(btnid).text;
+        document.getElementById("MainTB").value = text;
     }
 </script>
-@{ 
-    string url = Request.Url.ToString();
-}
-<h2>Index</h2>
-@foreach (Question q in Model)
-{
-    <p class="alert-info">@q.Body</p>
-    foreach(Answer a in q.Answers)
-    {
-        <a class="btn btn-default" href=@url>@a.Body</a>
-    }
-}
-

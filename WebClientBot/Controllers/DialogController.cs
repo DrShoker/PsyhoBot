@@ -13,6 +13,7 @@ namespace WebClientBot.Controllers
     {
         static List<Question> queisions;
         static Dialog dialog;
+        static Dictionary<Question, string> answers;
         // GET: Dialog
         public ActionResult OpenDialog(int id)
         {
@@ -42,7 +43,16 @@ namespace WebClientBot.Controllers
                 queisions.Add(GetNextQuestion(dialog.Questions.ToList(), queisions.Last()));
 
             queisions = queisions ?? new List<Question>() { dialog.Questions.FirstOrDefault() };
+            ViewBag.Answers = answers;
             return View(queisions);
+        }
+
+        [HttpPost]
+        public RedirectResult OpenDialog(string answer)
+        {
+            answers = answers ?? new Dictionary<Question, string>();
+            answers[queisions.Last()] = answer;
+            return Redirect("/Dialog/OpenDialog/"+dialog.Id);
         }
 
         Question GetNextQuestion(List<Question> list,Question question)

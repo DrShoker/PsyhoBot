@@ -158,6 +158,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DialogController.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +214,9 @@
     <Content Include="Views\Patients\Search.cshtml" />
     <Content Include="Views\Patients\AddOrEdit.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
+    <Content Include="Views\Dialog\OpenDialog.cshtml" />
+    <Content Include="Views\Shared\DialogMaster.cshtml" />
+    <Content Include="Views\Dialog\BeforeDialog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

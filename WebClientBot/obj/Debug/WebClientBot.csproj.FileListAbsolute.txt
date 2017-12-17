@@ -108,7 +108,6 @@ C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\Sy
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\System.Web.WebPages.resources.dll
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\System.Web.WebPages.Razor.resources.dll
-C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csprojResolveAssemblyReference.cache
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csproj.CoreCompileInputs.cache
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.dll
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.pdb

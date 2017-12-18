@@ -33,19 +33,30 @@
 </div>
 <div class="navbar-fixed-bottom col-md-4 container" style="margin-bottom: 100px;">
     <hr />
-    <div class="container">
-        @foreach (Answer a in Model.Last().Answers)
-        {
-            string id = "btn" + a.Id;
-            <a class="btn btn-default" onclick="FromTo('@id')" id="@id">@a.Body</a>
-        }
-    </div>
-    <form method="post">
-        <div class="input-group">
-            <input type="text" id="MainTB" class="form-control" name="answer" placeholder="Type your answer" aria-describedby="addon1" />
-            <input type="submit" class="form-control" />
+    @if(ViewBag.Flag)
+    {
+        <div class="container">
+            @foreach (Answer a in Model.Last().Answers)
+            {
+                string id = "btn" + a.Id;
+                <a class="btn btn-default" onclick="FromTo('@id')" id="@id">@a.Body</a>
+            }
         </div>
-    </form>
+        <form method="post" action="/Dialog/OpenDialog">
+            <div class="input-group">
+                <input type="text" id="MainTB" class="form-control" name="answer" placeholder="Введите ваш ответ" aria-describedby="addon1" />
+                <input type="submit" class="form-control" value="Ответить"/>
+            </div>
+        </form>
+    }
+    else
+    {
+        using(Html.BeginForm("EndDialog","Dialog",FormMethod.Post))
+        {
+            <h3 class="text-center">Спасибо за ответы, завершите диалог</h3>
+            <input type="submit" class="btn btn-block btn-success" value="Завершить диалог" />
+        }
+    }
 </div>
 <script>
     function FromTo(btnid)

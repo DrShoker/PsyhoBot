@@ -111,3 +111,4 @@ C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\Sy
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csproj.CoreCompileInputs.cache
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.dll
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.pdb
+C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csprojResolveAssemblyReference.cache

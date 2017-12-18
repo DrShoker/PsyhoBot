@@ -123,3 +123,4 @@ C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\D
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.Migrations.InitialCreate.resources
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csproj.GenerateResource.Cache
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.Migrations.MigrateDB.resources
+C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csprojResolveAssemblyReference.cache

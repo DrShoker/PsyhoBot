@@ -78,7 +78,6 @@ namespace PsyhoBotAnalizer.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             db.QuestionsResults.Add(questionsResult);
             db.SaveChanges();
 

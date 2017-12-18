@@ -18,8 +18,7 @@ namespace WebClientBot.Controllers
         [HttpGet]
         public ActionResult OpenDialog(int id)
         {
-            dialog = dialog!=null && dialog.Id == id ? dialog : null;
-            if (dialog == null)
+            if (dialog == null || dialog.Id != id)
                 SetDialog(id);
             queisions = dialog == null ? null : queisions;
             answers = answers ?? new Dictionary<Question, string>();
@@ -54,6 +53,8 @@ namespace WebClientBot.Controllers
             {
                 ViewBag.Error = "Error";
             }
+            queisions = null;
+            answers = null;
         }
 
 
@@ -77,10 +78,14 @@ namespace WebClientBot.Controllers
             foreach(KeyValuePair<Question,string> keyValue in answers)
             {
                 QuestionsResult questionsResult = new QuestionsResult() { Question = keyValue.Key.Body,
-                    Answer = keyValue.Value, Dialog = dialog
+                    Answer = keyValue.Value, DialogId = dialog.Id
                 };
                 HttpResponseMessage response = client.PostAsJsonAsync("api/QuestionsResults/",questionsResult).Result;
             }
+
+            dialog = null;
+            queisions = null;
+            answers = null;
 
             return Redirect("/Dialog/BeforeDialog");
         }
@@ -119,10 +124,6 @@ namespace WebClientBot.Controllers
             else
             {
                 ViewBag.result = "Error";
-            }
-            if (res == null)
-            {
-                return View();
             }
             return RedirectToAction("OpenDialog", new { id = res.Id });
             

@@ -11,14 +11,15 @@ namespace PsyhoBotAnalizer.Models
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
-
         public int? PatientId { get; set; }
         public virtual Patient Patient { get; set; }
-
         public virtual ICollection<Question> Questions { get; set; }
+        public virtual ICollection<QuestionsResult> QuestionsResults { get; set; }
         public Dialog()
         {
             Questions = new List<Question>();
+
+            QuestionsResults = new List<QuestionsResult>();
         }
     }
 }

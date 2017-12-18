@@ -99,7 +99,12 @@ namespace WebClientBot.Controllers
             {
                 ViewBag.result = "Error";
             }
-            return RedirectToAction("OpenDialog", new {id = res.Id});
+            if (res == null)
+            {
+                return View();
+            }
+            return RedirectToAction("OpenDialog", new { id = res.Id });
+            
 
         }
 

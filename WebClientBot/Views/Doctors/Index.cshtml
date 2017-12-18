@@ -1,0 +1,40 @@
+﻿<br />
+<br />
+<br />
+<table cellpadding="2" cellspacing="2" border="2">
+    <tr>
+        <th>ID</th>
+        <th>FullName</th>
+        <th>Birthday</th>
+        <th>Sex</th>
+        <th>Category</th>
+        <th>Characteristic</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var d in ViewBag.result)
+    {
+        <tr>
+            <th>@d.Id</th>
+            <th>@d.FullName</th>
+            <th>@d.Birthday</th>
+            <th>@d.Sex</th>
+            <th>@d.Category</th>
+            <th>@d.Charasteristic</th>
+            <th>
+                @using (@Html.BeginForm("Delete", "Patients", FormMethod.Post))
+                {
+                    <input type="hidden" name="id" value="@d.Id" />
+                    <input type="submit" value="Delete" class="btn btn-default" />
+                }
+            </th>
+            <th>
+                @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
+                {
+                    <input type="hidden" name="id" value="@d.Id" />
+                    <input type="submit" value="Edit" class="btn btn-default" />
+                }
+            </th>
+        </tr>
+    }
+</table>

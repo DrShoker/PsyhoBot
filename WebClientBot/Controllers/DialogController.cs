@@ -19,9 +19,21 @@ namespace WebClientBot.Controllers
         public ActionResult OpenDialog(int id)
         {
             dialog = dialog!=null && dialog.Id == id ? dialog : null;
+            if (dialog == null)
+                SetDialog(id);
             queisions = dialog == null ? null : queisions;
             answers = answers ?? new Dictionary<Question, string>();
+            if (queisions != null && queisions.Count < dialog.Questions.Count)
+                queisions.Add(GetNextQuestion(dialog.Questions.ToList(), queisions.Last()));
 
+            queisions = queisions ?? new List<Question>() { dialog.Questions.FirstOrDefault() };
+            ViewBag.Answers = answers;
+            ViewBag.Flag = answers?.Count != dialog.Questions.Count;
+            return View(queisions);
+        }
+
+        void SetDialog(int id)
+        {
             HttpClient client = new HttpClient();
 
             client.BaseAddress = new Uri(UrlContacts.BaseUrl);
@@ -34,7 +46,7 @@ namespace WebClientBot.Controllers
             HttpResponseMessage response = client.GetAsync(adress).Result;
 
 
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
                 dialog = response.Content.ReadAsAsync<Dialog>().Result;
             }
@@ -42,13 +54,6 @@ namespace WebClientBot.Controllers
             {
                 ViewBag.Error = "Error";
             }
-            if (queisions != null && queisions.Count < dialog.Questions.Count)
-                queisions.Add(GetNextQuestion(dialog.Questions.ToList(), queisions.Last()));
-
-            queisions = queisions ?? new List<Question>() { dialog.Questions.FirstOrDefault() };
-            ViewBag.Answers = answers;
-            ViewBag.Flag = answers?.Count != dialog.Questions.Count;
-            return View(queisions);
         }
 
 
@@ -69,6 +74,7 @@ namespace WebClientBot.Controllers
             client.DefaultRequestHeaders.Clear();
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
             foreach(KeyValuePair<Question,string> keyValue in answers)
             {
                 QuestionsResult questionsResult = new QuestionsResult() { Question = keyValue.Key.Body,

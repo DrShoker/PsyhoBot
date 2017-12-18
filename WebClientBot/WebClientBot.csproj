@@ -218,10 +218,12 @@
     <Content Include="Views\Dialog\OpenDialog.cshtml" />
     <Content Include="Views\Shared\DialogMaster.cshtml" />
     <Content Include="Views\Dialog\BeforeDialog.cshtml" />
+    <Content Include="Views\Doctors\Index.cshtml" />
+    <Content Include="Views\Doctors\Add.cshtml" />
+    <Content Include="Views\Doctors\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Doctors\" />
     <Folder Include="Views\UserLogin\" />
   </ItemGroup>
   <ItemGroup>

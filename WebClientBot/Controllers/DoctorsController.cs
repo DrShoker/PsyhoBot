@@ -11,8 +11,6 @@ namespace WebClientBot.Controllers
 {
     public class DoctorsController : Controller
     {
-        public const string DoctorUrl = "api/Doctors";
-
         public ActionResult Index()
         {
             HttpClient client = new HttpClient();
@@ -59,6 +57,71 @@ namespace WebClientBot.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public ActionResult Delete(int id)
+
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string adress = "/api/Doctors/" + id;
+
+            HttpResponseMessage response = client.DeleteAsync(adress).Result;
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string adress = "/api/Doctors/" + id;
+
+            HttpResponseMessage response = client.GetAsync(adress).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                ViewBag.result = response.Content.ReadAsAsync<Doctor>().Result;
+            }
+            else
+            {
+                ViewBag.result = "Error";
+            }
+
+            return View("Edit");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, Doctor doc)
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string adress = "/api/Doctors/" + id;
+
+            HttpResponseMessage response = client.PutAsJsonAsync(adress, doc).Result;
+
+            return RedirectToAction("Index");
+
+        }
 
     }
+
 }

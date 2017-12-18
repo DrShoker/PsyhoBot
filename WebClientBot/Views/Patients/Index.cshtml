@@ -1,4 +1,7 @@
-﻿@Html.ActionLink("Search Patient", "Search", "Patients")
+﻿<br />
+<br />
+<br />
+@Html.ActionLink("Search Patient", "Search", "Patients")
 <br />
 <table cellpadding="2" cellspacing="2" border="2">
     <tr>
@@ -28,16 +31,18 @@
                 @using (@Html.BeginForm("Delete", "Patients", FormMethod.Post))
                 {
                     <input type="hidden" name="id" value="@p.Id" />
-                    <input type="submit" value="Delete" class="btn btn-default" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
                 }
             </th>
             <th>
                 @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
             {
                 <input type="hidden" name="id" value="@p.Id" />
-                <input type="submit" value="Edit" class="btn btn-default" />
+                <input type="submit" value="Edit" class="btn btn-info" />
             }
         </th>
     </tr>
     }
 </table>
+<br />
+@Html.ActionLink("AddOrEdit Patient", "AddOrEdit", "Patients" , new {@class = "btn btn-success" } )

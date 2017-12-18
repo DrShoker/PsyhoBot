@@ -50,11 +50,6 @@ namespace WebClientBot.Controllers
             ViewBag.Flag = answers?.Count != dialog.Questions.Count;
             return View(queisions);
         }
-        [HttpPost]
-        public RedirectResult EndDialog()
-        {
-            return Redirect("/Dialog/BeforeDialog");
-        }
 
 
         [HttpPost]
@@ -62,6 +57,27 @@ namespace WebClientBot.Controllers
         {
             answers[queisions.Last()] = answer;
             return Redirect("/Dialog/OpenDialog/"+dialog.Id);
+        }
+
+        [HttpPost]
+        public RedirectResult EndDialog()
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            foreach(KeyValuePair<Question,string> keyValue in answers)
+            {
+                QuestionsResult questionsResult = new QuestionsResult() { Question = keyValue.Key.Body,
+                    Answer = keyValue.Value, Dialog = dialog
+                };
+                HttpResponseMessage response = client.PostAsJsonAsync("api/QuestionsResults/",questionsResult).Result;
+            }
+
+            return Redirect("/Dialog/BeforeDialog");
         }
 
         Question GetNextQuestion(List<Question> list,Question question)

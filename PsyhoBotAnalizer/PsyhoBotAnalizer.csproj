@@ -194,13 +194,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712181450039_InitialCreate.cs" />
-    <Compile Include="Migrations\201712181450039_InitialCreate.Designer.cs">
-      <DependentUpon>201712181450039_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201712161633007_InitialCreate.cs" />
+    <Compile Include="Migrations\201712161633007_InitialCreate.Designer.cs">
+      <DependentUpon>201712161633007_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712181506263_MigrateDB.cs" />
-    <Compile Include="Migrations\201712181506263_MigrateDB.Designer.cs">
-      <DependentUpon>201712181506263_MigrateDB.cs</DependentUpon>
+    <Compile Include="Migrations\201712181527494_MigrateDB.cs" />
+    <Compile Include="Migrations\201712181527494_MigrateDB.Designer.cs">
+      <DependentUpon>201712181527494_MigrateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -286,11 +286,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712181450039_InitialCreate.resx">
-      <DependentUpon>201712181450039_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712161633007_InitialCreate.resx">
+      <DependentUpon>201712161633007_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712181506263_MigrateDB.resx">
-      <DependentUpon>201712181506263_MigrateDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712181527494_MigrateDB.resx">
+      <DependentUpon>201712181527494_MigrateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

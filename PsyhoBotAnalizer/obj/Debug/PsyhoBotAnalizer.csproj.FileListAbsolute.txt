@@ -120,7 +120,3 @@ C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\bin\r
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csproj.CoreCompileInputs.cache
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.dll
 C:\Users\Администратор\source\repos\PsyhoBot\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.pdb
-C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.Migrations.InitialCreate.resources
-C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csproj.GenerateResource.Cache
-C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.Migrations.MigrateDB.resources
-C:\Users\Shok\source\repos\PsyhoBotAnalizer\PsyhoBotAnalizer\obj\Debug\PsyhoBotAnalizer.csprojResolveAssemblyReference.cache

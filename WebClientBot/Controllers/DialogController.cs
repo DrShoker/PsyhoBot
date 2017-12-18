@@ -15,10 +15,12 @@ namespace WebClientBot.Controllers
         static Dialog dialog;
         static Dictionary<Question, string> answers;
         // GET: Dialog
+        [HttpGet]
         public ActionResult OpenDialog(int id)
         {
             dialog = dialog!=null && dialog.Id == id ? dialog : null;
             queisions = dialog == null ? null : queisions;
+            answers = answers ?? new Dictionary<Question, string>();
 
             HttpClient client = new HttpClient();
 
@@ -45,13 +47,19 @@ namespace WebClientBot.Controllers
 
             queisions = queisions ?? new List<Question>() { dialog.Questions.FirstOrDefault() };
             ViewBag.Answers = answers;
+            ViewBag.Flag = answers?.Count != dialog.Questions.Count;
             return View(queisions);
         }
+        [HttpPost]
+        public RedirectResult EndDialog()
+        {
+            return Redirect("/Dialog/BeforeDialog");
+        }
+
 
         [HttpPost]
         public RedirectResult OpenDialog(string answer)
         {
-            answers = answers ?? new Dictionary<Question, string>();
             answers[queisions.Last()] = answer;
             return Redirect("/Dialog/OpenDialog/"+dialog.Id);
         }

@@ -54,7 +54,6 @@ C:\Users\Shok\source\repos\PsyhoBotAnalizer\WebClientBot\bin\ru\System.Web.WebPa
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\WebClientBot\bin\ru\System.Web.WebPages.Razor.resources.dll
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\WebClientBot\obj\Debug\WebClientBot.dll
 C:\Users\Shok\source\repos\PsyhoBotAnalizer\WebClientBot\obj\Debug\WebClientBot.pdb
-C:\Users\Shok\source\repos\PsyhoBotAnalizer\WebClientBot\obj\Debug\WebClientBot.csprojResolveAssemblyReference.cache
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ApplicationInsights.config
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\WebClientBot.dll.config
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\WebClientBot.dll
@@ -111,3 +110,4 @@ C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\bin\ru\Sy
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csproj.CoreCompileInputs.cache
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.dll
 C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.pdb
+C:\Users\Администратор\source\repos\PsyhoBot\WebClientBot\obj\Debug\WebClientBot.csprojResolveAssemblyReference.cache

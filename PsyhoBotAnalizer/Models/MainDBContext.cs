@@ -22,5 +22,6 @@ namespace PsyhoBotAnalizer.Models
         public DbSet<Dialog> Dialogs { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
+        public DbSet<QuestionsResult> QuestionsResults { get; set; }
     }
 }

@@ -170,6 +170,7 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\QuestionsResult.cs" />
     <Compile Include="Models\UrlContacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

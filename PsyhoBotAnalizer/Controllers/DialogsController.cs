@@ -14,27 +14,8 @@ namespace PsyhoBotAnalizer.Controllers
 {
     public class DialogsController : ApiController
     {
-        public static Dialog risingdialog;
 
         List<int> QuestionsId = new List<int>();
-
-        Question GetNextQuestion(int id)
-        {
-            bool identify = false;
-
-            foreach(var n in risingdialog.Questions)
-            {
-                if (identify)
-                {
-                    return n;
-                }
-                if(n.Id == id)
-                {
-                    identify = true;
-                }
-            }
-            return null;
-        }
         [HttpGet]
         [ResponseType(typeof(Dialog))]
         public IHttpActionResult GetStartDialog(string Name, int id)
@@ -45,14 +26,8 @@ namespace PsyhoBotAnalizer.Controllers
             {
 
                 Dialog dialog = new Dialog();
-
+                dialog.Patient = pat;
                 PostDialog(dialog);
-
-                risingdialog = dialog;
-            
-                dialog.PatientId = pat.Id;
-
-                dialog.Questions.FirstOrDefault();
 
                 return Ok(dialog);
             }

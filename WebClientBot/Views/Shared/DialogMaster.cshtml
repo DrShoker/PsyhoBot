@@ -15,13 +15,16 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                @Html.ActionLink("PsyhoBot", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("PsyhoBot", "BeforeDialog", "Dialog", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Start Dialog", "BeforeDialog", "Dialog", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Doctors", "Index", "Help", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Doctors", "Index", "Doctors", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Patients", "Index", "Patients", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Dialogs", "Index", "Dialog", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Questions", "Index", "Questions", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Answers", "Index", "Answers", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Results", "Index", "QuestionsResults", new { area = "" }, null)</li>
                 </ul>
             </div>
         </div>

@@ -1,20 +1,21 @@
 ﻿<br />
 <br />
 <br />
+<center>@Html.ActionLink("Add Patient", "AddOrEdit", "Patients", new { @class = "btn btn-success btn-lg" })</center>
 @Html.ActionLink("Search Patient", "Search", "Patients")
 <br />
-<table cellpadding="2" cellspacing="2" border="2">
+<table class="table table-hover">
     <tr>
-        <th>ID</th>
-        <th>FullName</th>
-        <th>Birthday</th>
-        <th>Diagnosis</th>
-        <th>Sex</th>
-        <th>DiseasePeriod</th>
-        <th>NormalCondition</th>
-        <th>Characteristic</th>
-        <th></th>
-        <th></th>
+        <th class="active">ID</th>
+        <th class="active">FullName</th>
+        <th class="active">Birthday</th>
+        <th class="active">Diagnosis</th>
+        <th class="active">Sex</th>
+        <th class="active">DiseasePeriod</th>
+        <th class="active">NormalCondition</th>
+        <th class="active">Characteristic</th>
+        <th class="active"></th>
+        <th class="active"></th>
     </tr>
     @foreach (var p in ViewBag.result)
     {
@@ -36,13 +37,13 @@
             </th>
             <th>
                 @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
-            {
-                <input type="hidden" name="id" value="@p.Id" />
-                <input type="submit" value="Edit" class="btn btn-info" />
-            }
-        </th>
-    </tr>
+                {
+                    <input type="hidden" name="id" value="@p.Id" />
+                    <input type="submit" value="Edit" class="btn btn-info" />
+                }
+            </th>
+        </tr>
     }
 </table>
 <br />
-@Html.ActionLink("AddOrEdit Patient", "AddOrEdit", "Patients" , new {@class = "btn btn-success" } )
+

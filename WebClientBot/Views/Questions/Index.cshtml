@@ -1,0 +1,36 @@
+﻿<br />
+<br />
+<br />
+<center>@Html.ActionLink("Add Question", "Add", "Questions", new { @class = "btn btn-success btn-lg" })</center>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th class="active">ID</th>
+        <th class="active">Body</th>
+        <th class="active"></th>
+        <th class="active"></th>
+    </tr>
+    @foreach (var que in ViewBag.result)
+    {
+        <tr>
+            <th>@que.Id</th>
+            <th>@que.Body</th>
+            <th>
+                @using (@Html.BeginForm("Delete", "Questions", FormMethod.Post))
+                {
+                    <input type="hidden" name="id" value="@que.Id" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                }
+            </th>
+            <th>
+                @using (Html.BeginForm("Edit", "Questions", FormMethod.Get))
+                {
+                    <input type="hidden" name="id" value="@que.Id" />
+                    <input type="submit" value="Edit" class="btn btn-info" />
+                }
+            </th>
+        </tr>
+    }
+</table>
+<br />
+

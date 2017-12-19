@@ -94,7 +94,10 @@ namespace PsyhoBotAnalizer.Controllers
             {
                 return NotFound();
             }
-
+            if(question.Answers != null)
+            {
+                BadRequest();
+            }
             db.Questions.Remove(question);
             db.SaveChanges();
 

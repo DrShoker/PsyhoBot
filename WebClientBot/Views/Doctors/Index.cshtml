@@ -1,16 +1,18 @@
 ﻿<br />
 <br />
 <br />
-<table cellpadding="2" cellspacing="2" border="2">
+<center>@Html.ActionLink("Add Doctor", "Add", "Doctors", new { @class = "btn btn-success btn-lg" })</center>
+<br />
+<table class="table table-hover">
     <tr>
-        <th>ID</th>
-        <th>FullName</th>
-        <th>Birthday</th>
-        <th>Sex</th>
-        <th>Category</th>
-        <th>Characteristic</th>
-        <th></th>
-        <th></th>
+        <th class="active">ID</th>
+        <th class="active">FullName</th>
+        <th class="active">Birthday</th>
+        <th class="active">Sex</th>
+        <th class="active">Category</th>
+        <th class="active">Characteristic</th>
+        <th class="active"></th>
+        <th class="active"></th>
     </tr>
     @foreach (var d in ViewBag.result)
     {
@@ -25,16 +27,17 @@
                 @using (@Html.BeginForm("Delete", "Patients", FormMethod.Post))
                 {
                     <input type="hidden" name="id" value="@d.Id" />
-                    <input type="submit" value="Delete" class="btn btn-default" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
                 }
             </th>
             <th>
                 @using (Html.BeginForm("Edit", "Patients", FormMethod.Get))
                 {
                     <input type="hidden" name="id" value="@d.Id" />
-                    <input type="submit" value="Edit" class="btn btn-default" />
+                    <input type="submit" value="Edit" class="btn btn-info" />
                 }
             </th>
         </tr>
     }
 </table>
+<br />

@@ -16,6 +16,23 @@ namespace PsyhoBotAnalizer.Controllers
     {
         private MainDBContext db = new MainDBContext();
 
+        public IHttpActionResult GetDialogsForName(string name, int id)
+        {
+            Patient pat = db.Patients.Where(p => p.FullName == name).FirstOrDefault();
+
+            Dialog dia = db.Dialogs.Where(d => d.PatientId == pat.Id).FirstOrDefault();
+
+            int diaId = dia.Id;
+            List<QuestionsResult> quer = new List<QuestionsResult>(db.QuestionsResults.Where(d => d.DialogId == diaId));
+            if (quer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(quer);
+
+        }
+
         // GET: api/QuestionsResults
         public IQueryable<QuestionsResult> GetQuestionsResults()
         {
@@ -78,7 +95,6 @@ namespace PsyhoBotAnalizer.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             db.QuestionsResults.Add(questionsResult);
             db.SaveChanges();
 

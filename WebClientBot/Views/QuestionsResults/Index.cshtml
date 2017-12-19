@@ -1,0 +1,29 @@
+﻿<br />
+<br />
+<br />
+<br />
+<table class="table table-hover">
+    <tr>
+        <th class="active">ID</th>
+        <th class="active">Question</th>
+        <th class="active">Answer</th>
+        <th class="active">DialoId</th>
+        <th class="active"></th>
+    </tr>
+    @foreach (var qr in ViewBag.result)
+    {
+        <tr>
+            <th>@qr.Id</th>
+            <th>@qr.Question</th>
+            <th>@qr.Answer</th>
+            <th>@qr.DialogId</th>
+            <th>
+                @using (@Html.BeginForm("Delete", "QuestionsResults", FormMethod.Post))
+                {
+                    <input type="hidden" name="id" value="@qr.Id" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                }
+            </th>
+        </tr>
+    }
+</table>

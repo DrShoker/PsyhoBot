@@ -2,7 +2,10 @@
 @{
     ViewBag.Title = "Add";
 }
-<div class="form-body">
+<br />
+<br />
+<br />
+<form>
     @using (Html.BeginForm())
     {
         @Html.HiddenFor(model => model.Id)
@@ -44,4 +47,4 @@
             <input type="reset" value="Reset" class="btn button" />
         </div>
     }
-</div>
+</form>

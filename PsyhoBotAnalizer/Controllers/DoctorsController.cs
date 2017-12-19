@@ -16,6 +16,16 @@ namespace PsyhoBotAnalizer.Controllers
     {
         private MainDBContext db = new MainDBContext();
 
+        public HttpResponseMessage GetAdmin(string login, string password)
+        {
+            if(login == Admin.login && password == Admin.password)
+            {
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+            return new HttpResponseMessage(HttpStatusCode.Unauthorized);
+        }
+
         // GET: api/Doctors
         public IQueryable<Doctor> GetDoctors()
         {

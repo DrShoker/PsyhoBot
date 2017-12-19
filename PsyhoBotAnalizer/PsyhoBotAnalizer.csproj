@@ -203,6 +203,7 @@
       <DependentUpon>201712181527494_MigrateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\BotDbInitializer.cs" />
     <Compile Include="Models\Dialog.cs" />

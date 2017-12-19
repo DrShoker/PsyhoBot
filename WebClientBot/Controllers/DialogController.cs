@@ -137,6 +137,7 @@ namespace WebClientBot.Controllers
         [HttpGet]
         public ActionResult BeforeDialog()
         {
+            IsAutorized.autorized = false;
             return View();
         }
 
@@ -180,6 +181,31 @@ namespace WebClientBot.Controllers
             HttpResponseMessage response = client.DeleteAsync(adress).Result;
 
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult VerifyAdmin(string login, string password)
+        {
+            HttpClient client = new HttpClient();
+
+            client.BaseAddress = new Uri(UrlContacts.BaseUrl);
+
+            client.DefaultRequestHeaders.Clear();
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string adress = $"api/Doctors?login={login}&password={password}";
+
+            HttpResponseMessage response = client.GetAsync(adress).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                IsAutorized.autorized = true;
+
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("BeforeDialog");
         }
 
     }

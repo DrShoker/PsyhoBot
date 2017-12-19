@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WebClientBot.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,12 +20,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @if (IsAutorized.autorized == true)
+                    {
                     <li>@Html.ActionLink("Doctors", "Index", "Doctors", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Patients", "Index", "Patients", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Dialogs", "Index", "Dialog", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Questions", "Index", "Questions", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Answers", "Index", "Answers", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Results", "Index", "QuestionsResults", new { area = "" }, null)</li>
+                    }
                 </ul>
             </div>
         </div>

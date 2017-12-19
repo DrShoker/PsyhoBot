@@ -171,6 +171,7 @@
     <Compile Include="Models\ClientExtenctions.cs" />
     <Compile Include="Models\Dialog.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\IsAutorized.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuestionsResult.cs" />

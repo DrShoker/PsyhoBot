@@ -5,63 +5,82 @@
 <br />
 <br />
 <br />
-<div class="form-body">
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
+    <div class="col-sm-6 col-lg-offset-3">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.FullName)
-            @Html.EditorFor(model => model.FullName)
-            @Html.ValidationMessageFor(model => model.FullName)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.FullName, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.FullName)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Birthday)
-            @Html.EditorFor(model => model.Birthday)
-            @Html.ValidationMessageFor(model => model.Birthday)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Birthday, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Birthday, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Birthday)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Diagnosis)
-            @Html.EditorFor(model => model.Diagnosis)
-            @Html.ValidationMessageFor(model => model.Diagnosis)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Diagnosis, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Diagnosis, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Diagnosis)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sex)
-            @Html.EditorFor(model => model.Sex)
-            @Html.ValidationMessageFor(model => model.Sex)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sex, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Sex, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Sex)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DiseasePeriod)
-            @Html.EditorFor(model => model.DiseasePeriod)
-            @Html.ValidationMessageFor(model => model.DiseasePeriod)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DiseasePeriod, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.DiseasePeriod, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.DiseasePeriod)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.NormalCondition)
-            @Html.EditorFor(model => model.NormalCondition)
-            @Html.ValidationMessageFor(model => model.NormalCondition)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.NormalCondition, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.NormalCondition, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.NormalCondition)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Characteristic)
-            @Html.EditorFor(model => model.Characteristic)
-            @Html.ValidationMessageFor(model => model.Characteristic)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Characteristic, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Characteristic, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Characteristic)
+            </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.DoctorId)
-            @Html.EditorFor(model => model.DoctorId)
-            @Html.ValidationMessageFor(model => model.DoctorId)
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.DoctorId, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.DoctorId, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.DoctorId)
+            </div>
 
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn button" />
-            <input type="reset" value="Reset" class="btn button" />
-        </div>        
-    }
+            <div class="form-group">
+                <center>
+                    <input type="submit" value="Submit" class="btn btn-info" />
+                    <input type="reset" value="Reset" class="btn btn-warning" />
+                </center>
+            </div>
+        }
+    </div>
 </div>
-

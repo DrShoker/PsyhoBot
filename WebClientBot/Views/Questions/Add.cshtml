@@ -5,20 +5,29 @@
 <br />
 <br />
 <br />
-<div class="form-body">
-    @using (Html.BeginForm())
-    {
-        @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Body)
-            @Html.EditorFor(model => model.Body)
-            @Html.ValidationMessageFor(model => model.Body)
-        </div>
+    <div class="row">
+        <div class="col-sm-6 col-lg-offset-3">
+            @using (Html.BeginForm())
+            {
+                @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn button" />
-            <input type="reset" value="Reset" class="btn button" />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Body, new { @class = "col-md-2 col-md-offset-2 control-label" })
+                    <div class="col-md-6">
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Body)
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-lg-offset-4">
+                        <center><input type="submit" value="Submit" class="btn btn-info" />
+                        <input type="reset" value="Reset" class="btn btn-warning" /></center>
+                    </div>
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>
